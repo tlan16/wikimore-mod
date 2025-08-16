@@ -9,9 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-      with:
-        repository: https://git.private.coffee/PrivateCoffee/wikimore.git
+    - run: git clone --depth 1 https://git.private.coffee/PrivateCoffee/wikimore.git
     - uses: docker/login-action@v3
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
