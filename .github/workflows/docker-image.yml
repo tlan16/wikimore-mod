@@ -8,13 +8,13 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: /wikimore
+    working-directory: ./wikimore
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: git clone --depth 1 https://git.private.coffee/PrivateCoffee/wikimore.git /wikimore
+    - run: git clone --depth 1 https://git.private.coffee/PrivateCoffee/wikimore.git .
     - uses: docker/login-action@v3
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
