@@ -13,9 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        git clone --depth 1 https://git.private.coffee/PrivateCoffee/wikimore.git wikimore
-        cd wikimore
+    - run: git clone --depth 1 https://git.private.coffee/PrivateCoffee/wikimore.git "$PWD"
     - uses: docker/login-action@v3
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
